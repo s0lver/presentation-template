@@ -1,0 +1,92 @@
+%!TEX program=pdflatex
+\documentclass[8pt,xcolor={dvipsnames,table,xcdraw},handout]{beamer} % option aspectratio=169 for wide screen
+\usetheme[
+%%% options passed to the outer theme
+    progressstyle=movCircCnt,   %either fixedCircCnt, movCircCnt, or corner
+    rotationcw,          % change the rotation direction from counter-clockwise to clockwise
+%    shownavsym          % show the navigation symbols
+  ]{Cinvestav}
+  
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{epigraph}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage[ruled]{algorithm2e}
+\usepackage{caption}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{hyperref}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+
+\setbeamerfont{caption}{size=\scriptsize}
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+  \href{#1}{{\usebeamercolor[bg]{AAUsimple}#2}}%
+}
+\definecolor{sortOfBlueColor}{RGB}{0,200,255}
+\newcommand{\markdone}{\textcolor{PineGreen}{$\bullet$}}
+\newcommand{\markonprogress}{\textcolor{sortOfBlueColor}{$\bullet$}}
+\newcommand{\markoff}{\textcolor{PineGreen}{$\circ$}}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{PTSans}
+
+
+\title[Short thesis title]{Long, very long thesis title}
+         
+\author[ITL Cinvestav-Tamaulipas]{Student name}
+
+\institute[
+  ITL Information Technology Laboratory\\
+  Cinvestav\\
+  Tamaulipas
+] 
+{Advisor 1\\Advisor 2\\ITL Cinvestav}
+
+\date{Reason of presentation, August 2017}
+
+\graphicspath{ {images/} }
+
+% Gain some extra space on slides
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
+
+% Put a "separator" at the beginning of each section with the section title
+% \AtBeginSection[]{
+%   \begin{frame}
+%   \vfill
+%   \centering
+%   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+%     \usebeamerfont{title}\insertsectionhead\par%
+%   \end{beamercolorbox}
+%   \vfill
+%   \end{frame}
+% }
+
+\begin{document}
+{\aauwavesbg%
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page
+  \titlepage
+\end{frame}}
+
+\input{toc}
+\input{introduction}
+\input{future-work}
+
+{\aauwavesbg
+\begin{frame}[plain]
+  \finalpage{
+    Thank you for your attention!
+  }
+  { \tiny
+    \epigraph{\tiny We make our world significant by the courage of our questions and by the depth of our answers.}{\tiny \textit{Carl Sagan}}
+  }
+\end{frame}}
+
+\input{references}
+
+\end{document}
